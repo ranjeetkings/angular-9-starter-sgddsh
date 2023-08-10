@@ -1,24 +1,50 @@
-<input
-  type="password"
-  inputmode="numeric"
-  style="width:4vw;height:2vh;margin:10px 0px 0px 10px;text-align:center"
-  appSingleDigitInput
-/>
-<input
-  type="password"
-  inputmode="numeric"
-  style="width:4vw;height:2vh;margin:10px 0px 0px 10px;text-align:center"
-  appSingleDigitInput
-/>
-<input
-  type="password"
-  inputmode="numeric"
-  style="width:4vw;height:2vh;margin:10px 0px 0px 10px;text-align:center"
-  appSingleDigitInput
-/>
-<input
-  type="password"
-  inputmode="numeric"
-  style="width:4vw;height:2vh;margin:10px 0px 0px 10px;text-align:center"
-  appSingleDigitInput
-/>
+<form (ngSubmit)="f2.form.valid && validatePin1()" #f2="ngForm" novalidate>
+  <input
+    type="password"
+    inputmode="numeric"
+    style="width:20px;height:20px;margin:10px 0px 0px 10px;text-align:center"
+    appSingleDigitInput
+    [(ngModel)]="input01"
+    name="inp01"
+  />
+  <input
+    type="password"
+    inputmode="numeric"
+    style="width:20px;height:20px;margin:10px 0px 0px 10px;text-align:center"
+    appSingleDigitInput
+    [(ngModel)]="input02"
+    name="inp02"
+  />
+  <input
+    type="password"
+    inputmode="numeric"
+    style="width:20px;height:20px;margin:10px 0px 0px 10px;text-align:center"
+    appSingleDigitInput
+    [(ngModel)]="input03"
+    name="inp03"
+  />
+  <input
+    type="password"
+    inputmode="numeric"
+    style="width:20px;height:20px;margin:10px 0px 0px 10px;text-align:center"
+    appSingleDigitInput
+    [(ngModel)]="input04"
+    name="inp04"
+  />
+  <div>
+    <input
+      type="submit"
+      value="submit"
+      [disabled]="!f2.form.valid"
+      style="margin:10px 0px 0px 10px;text-align:center"
+    />
+  </div>
+</form>
+
+<div style="margin:10px 0px 0px 10px;">1st Value : {{ input01 }}</div>
+<div style="margin:10px 0px 0px 10px;">12nd Value : {{ input02 }}</div>
+<div style="margin:10px 0px 0px 10px;">3rd Value : {{ input03 }}</div>
+<div style="margin:10px 0px 0px 10px;">4th Value : {{ input04 }}</div>
+<div style="margin:20px 0px 0px 10px;">
+  Submitting Value as : {{ formInput }}
+</div>
