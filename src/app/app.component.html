@@ -3,6 +3,16 @@
     type="password"
     inputmode="numeric"
     style="width:20px;height:20px;margin:10px 0px 0px 10px;text-align:center"
+    maxlength="4"
+    [(ngModel)]="input01"
+    (ngModelChange)="updateButtonState(input01)"
+    name="inp01"
+    required
+  />
+  <!-- <input
+    type="password"
+    inputmode="numeric"
+    style="width:20px;height:20px;margin:10px 0px 0px 10px;text-align:center"
     appSingleDigitInput
     [(ngModel)]="input01"
     name="inp01"
@@ -30,21 +40,22 @@
     appSingleDigitInput
     [(ngModel)]="input04"
     name="inp04"
-  />
+  /> -->
   <div>
     <input
       type="submit"
       value="submit"
-      [disabled]="!f2.form.valid"
+      [disabled]="!f2.form.valid || !inpLen"
       style="margin:10px 0px 0px 10px;text-align:center"
     />
   </div>
 </form>
 
 <div style="margin:10px 0px 0px 10px;">1st Value : {{ input01 }}</div>
-<div style="margin:10px 0px 0px 10px;">12nd Value : {{ input02 }}</div>
+<div style="margin:10px 0px 0px 10px;">2nd Value : {{ input02 }}</div>
 <div style="margin:10px 0px 0px 10px;">3rd Value : {{ input03 }}</div>
 <div style="margin:10px 0px 0px 10px;">4th Value : {{ input04 }}</div>
+<div style="margin:10px 0px 0px 10px;">Form Valid ? : {{ !f2.form.valid }}</div>
 <div style="margin:20px 0px 0px 10px;">
   Submitting Value as : {{ formInput }}
 </div>
